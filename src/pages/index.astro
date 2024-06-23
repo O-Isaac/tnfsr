@@ -1,0 +1,47 @@
+---
+import Main from "@layouts/main.astro";
+import CTA from "@components/button-cta";
+import Cards from "@components/cards";
+import TeamBlock from "@components/team";
+---
+
+<Main>
+	<section class="-mt-24 relative">
+		<video class="w-full aspect-video object-cover object-top gradient-mask-b-0	h-screen" autoplay muted loop src="/assets/hero.mp4" height="480" width="848" />
+		<div class="absolute inset-0 h-screen bg-neutral-950/50 grid place-content-center z-20 p-4">
+			<h2 class="text-7xl text-center max-w-3xl font-bold">
+				Transform your <span class="text-gradient-to-r from-[#663177] to-[#C63F7B] animate-gradient-x">vision</span> 
+				into <span class="text-gradient-to-r from-[#FF0F7B] to-[#F89B29] animate-gradient-x">reality</span> 
+				with our <span class="text-gradient-to-r from-[#B429F9] to-[#26C5F3]">creativity</span>
+			</h2>
+
+			<CTA title="Get in Touch" href="/" />
+		</div>
+	</section>
+	
+	<section class="h-96 w-full grid place-content-center p-4 py-14 bg-neutral-950/50">
+		<h2 class="text-7xl max-w-5xl text-center font-bold text-pretty">
+			Turn your <span class="text-gradient-to-r from-amber-500 via-orange-500 to-orange-700 animate-gradient-xy">ideas</span> 
+			into <span class="text-gradient-to-r from-amber-500 via-pink-500 to-purple-500 animate-gradient-xy">high-quality</span> visual and auditory 
+			<span class="text-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 animate-gradient-xy">content</span>
+		</h2>
+	</section>
+
+	<section class="bg-white p-14 grid grid-cols-1 place-content-center gap-8">
+		<Cards client:load />
+	</section>
+
+	<section class="bg-black grid place-content-center text-center">
+		<h2 class="text-7xl font-bold mt-12 text-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 animate-gradient-x">The New Flex Studio Record</h2>
+		<p class="max-w-4xl mx-auto mt-4 text-lg text-pretty text-neutral-100">The New Flex Studio was born from the initiative to help people produce their audiovisual and graphic ideas. Our mission is to bring all kinds of audiovisual and graphic works from our clients' minds to support them in both the creative and logical processes.</p>
+		<figure class="max-h-96 overflow-hidden mt-4">
+			<img class="w-screen h-full object-cover gradient-mask-t-50 aspect-video" src="/assets/about-tnfsr-bg.jpeg" alt="About The New Flex Studio Record">
+		</figure>
+	</section>
+
+	<section class="bg-white grid place-content-center text-center relative">
+		<h2 class="text-6xl text-black font-bold mt-8 leading-normal relative z-30">Our Team of <span class="text-gradient-to-r from-indigo-900 to-purple-900">Professionals</span></h2>
+		<p class="text-gray-900 mb-4">Here is our team of professionals who work every day to make this business successful.</p>
+		<TeamBlock />
+	</section>
+</Main>
