@@ -1,6 +1,6 @@
 ---
 import Main from "@layouts/main.astro";
-import Categories from "@components/categories"
+import Cats from "@components/categories"
 import Meteors from "@components/magic-ui/meteors"
 import { getCollection } from "astro:content";
 
@@ -33,7 +33,7 @@ const defaultCategory = Object.keys(categoriesCounts).includes(defaultCategoryPa
 	</section>
 
     <section>
-        <Categories 
+        <Cats 
             posts={posts} 
             categoriesCounts={categoriesCounts} 
             categories={categories} 
