@@ -6,8 +6,10 @@ export function Brand () {
     return (
         <NavbarContent justify="start">
             <NavbarBrand>
-                <img src="/assets/logo.svg" height={64} width={64}  />
-                <p className="text-inherit ml-4 text-2xl font-bold">TNFSR <span className="text-red-500 mt-4">•</span></p>
+                <Link  className="text-white" href="/">
+                    <img src="/assets/logo.svg" height={64} width={64}  />
+                    <p className="text-inherit ml-4 text-2xl font-bold">TNFSR <span className="text-red-500 mt-4">•</span></p>
+                </Link>
             </NavbarBrand>
         </NavbarContent>
     )

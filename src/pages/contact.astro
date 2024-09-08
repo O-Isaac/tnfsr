@@ -1,0 +1,33 @@
+---
+import Meteors from "@components/magic-ui/meteors";
+import MarqueeDemo from "@components/marks";
+import FormComponentContact from "@components/contact/form"
+import Main from "@layouts/main.astro";
+
+---
+
+<Main title="Contact">
+    <section class="-mt-24 relative h-[450px] overflow-hidden">
+		<img class="w-full aspect-video object-cover object-center gradient-mask-b-0 h-full" src="/assets/about-tnfsr-bg.jpeg" height="480" width="848" />
+		<div class="absolute inset-0 h-full bg-black/50 flex items-center z-20 p-4 *:mx-auto ">
+			<div class="w-full">
+                <div class="max-w-[1536px] p-5 mx-auto">
+                    <h2 class="text-7xl font-bold leading-normal">
+                        Contact
+                    </h2>
+                    <p class="ml-1">Tell me about your proyect.</p>
+                </div>
+            </div>
+		</div>
+        <Meteors client:load />
+	</section>
+
+    <section class="max-w-[1536px] mx-auto">
+        <MarqueeDemo />
+    </section>
+
+    <section class="max-w-[1536px] mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 p-4 mb-24 items-center">
+        <FormComponentContact client:load />
+        <p>We are a company of professionals. If you need help with any of your projects, we can provide creative assistance and network coverage to make your project known everywhere, with the best quality in audiovisual video production.</p>
+    </section>
+</Main>

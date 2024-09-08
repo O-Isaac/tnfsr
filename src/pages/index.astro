@@ -3,6 +3,10 @@ import Main from "@layouts/main.astro";
 import CTA from "@components/button-cta";
 import Cards from "@components/cards";
 import TeamBlock from "@components/team";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts")
 ---
 
 <Main>
@@ -15,7 +19,7 @@ import TeamBlock from "@components/team";
 				with our <span class="text-gradient-to-r from-[#B429F9] to-[#26C5F3]">creativity</span>
 			</h2>
 
-			<CTA title="Get in Touch" href="/" />
+			<CTA title="Get in Touch" href="/contact" />
 		</div>
 	</section>
 	
@@ -28,7 +32,7 @@ import TeamBlock from "@components/team";
 	</section>
 
 	<section class="bg-white p-14 grid grid-cols-1 place-content-center gap-8">
-		<Cards client:load />
+		<Cards posts={posts} client:load />
 	</section>
 
 	<section class="bg-black grid place-content-center text-center">

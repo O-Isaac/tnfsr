@@ -1,0 +1,44 @@
+---
+import Main from "@layouts/main.astro";
+import Categories from "@components/categories"
+import Meteors from "@components/magic-ui/meteors"
+import { getCollection } from "astro:content";
+
+const categories = await getCollection("categories")
+const posts = await getCollection("posts")
+const categoriesCounts = categories.reduce((acc, el) => {
+    return Object.assign(acc, { 
+        [el.id]: posts.filter(post => post.data.category === el.id).length
+    })
+}, {})
+
+const defaultCategoryParam = Astro.url.searchParams.get("category") ?? ""
+const defaultCategory = Object.keys(categoriesCounts).includes(defaultCategoryParam) ? defaultCategoryParam : ""
+---
+
+<Main title="Events">
+    <section class="-mt-24 relative h-[450px] overflow-hidden">
+		<img class="w-full aspect-video object-cover object-center gradient-mask-b-0 h-full" src="/assets/about-tnfsr-bg.jpeg" height="480" width="848" />
+		<div class="absolute inset-0 h-full bg-black/50 flex items-center z-20 p-4 *:mx-auto ">
+			<div class="w-full">
+                <div class="max-w-[1536px] p-5 mx-auto">
+                    <h2 class="text-7xl font-bold leading-normal">
+                        Events
+                    </h2>
+                    <p class="ml-1">Here all our works</p>
+                </div>
+            </div>
+		</div>
+        <Meteors client:load />
+	</section>
+
+    <section>
+        <Categories 
+            posts={posts} 
+            categoriesCounts={categoriesCounts} 
+            categories={categories} 
+            client:load
+            defaultCategory={defaultCategory}
+        />
+    </section>
+</Main>
