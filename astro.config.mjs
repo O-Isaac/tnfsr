@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), keystatic()],
-  output: "hybrid",
+  output: "server",
   redirects: {
     "/admin": "/keystatic"
   },
