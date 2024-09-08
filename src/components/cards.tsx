@@ -16,7 +16,7 @@ export function Card (props: PropsCard) {
                 <Image isZoomed radius="none" src={props.image} alt={props.title} className="w-full" />
             </header>
             <main className="flex *:uppercase *:font-medium text-xl justify-between py-5">
-                <Link isBlock showAnchorIcon href={`/events?category=${props.category}`} size="lg" color="secondary">
+                <Link isBlock showAnchorIcon href={`/categories?category=${props.category}`} size="lg" color="secondary">
                     {props.category}
                 </Link>
                 <h3 className="text-black">{props.title}</h3>
