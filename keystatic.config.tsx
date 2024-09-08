@@ -7,7 +7,8 @@ import { config, fields, collection } from "@keystatic/core"
 export default config({
     locale: "es-ES",
     storage: {
-        kind: "local"
+        kind: "github",
+        repo: "O-Isaac/tnfsr"
     },
     collections: {
         posts: collection({
